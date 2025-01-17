@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Saved Snippets</h2>
+<ul>
+    {% for snippet in snippets %}
+    <li>
+        <h3>{{ snippet.title }}</h3>
+        <pre>{{ snippet.content }}</pre>
+        <a href="{{ url_for('delete_snippet', id=snippet.id) }}">Delete</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
+
